@@ -19,31 +19,31 @@ export default function WhatsIncludedSection() {
             <CardContent>
               <ul className="space-y-2">
                 <li className="flex items-start">
-                  <Check className="w-5 h-5 mr-2 text-green-500 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
                   <span>Transport in a 4x4 vehicle</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="w-5 h-5 mr-2 text-green-500 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
                   <span>15 nights accommodation</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="w-5 h-5 mr-2 text-green-500 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
                   <span>Meals and snacks</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="w-5 h-5 mr-2 text-green-500 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
                   <span>Camping and cooking gear</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="w-5 h-5 mr-2 text-green-500 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
                   <span>Drinking water</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="w-5 h-5 mr-2 text-green-500 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
                   <span>Activities in the itinerary</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="w-5 h-5 mr-2 text-green-500 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
                   <span>All national park fees</span>
                 </li>
               </ul>
@@ -59,23 +59,23 @@ export default function WhatsIncludedSection() {
             <CardContent>
               <ul className="space-y-2">
                 <li className="flex items-start">
-                  <X className="w-5 h-5 mr-2 text-red-500 flex-shrink-0 mt-0.5" />
+                  <X className="w-5 h-5 mr-2 text-muted-foreground flex-shrink-0 mt-0.5" />
                   <span>Flights to and from Johannesburg</span>
                 </li>
                 <li className="flex items-start">
-                  <X className="w-5 h-5 mr-2 text-red-500 flex-shrink-0 mt-0.5" />
+                  <X className="w-5 h-5 mr-2 text-muted-foreground flex-shrink-0 mt-0.5" />
                   <span>Optional activities</span>
                 </li>
                 <li className="flex items-start">
-                  <X className="w-5 h-5 mr-2 text-red-500 flex-shrink-0 mt-0.5" />
+                  <X className="w-5 h-5 mr-2 text-muted-foreground flex-shrink-0 mt-0.5" />
                   <span>Alcoholic beverages</span>
                 </li>
                 <li className="flex items-start">
-                  <X className="w-5 h-5 mr-2 text-red-500 flex-shrink-0 mt-0.5" />
+                  <X className="w-5 h-5 mr-2 text-muted-foreground flex-shrink-0 mt-0.5" />
                   <span>Tips</span>
                 </li>
                 <li className="flex items-start">
-                  <X className="w-5 h-5 mr-2 text-red-500 flex-shrink-0 mt-0.5" />
+                  <X className="w-5 h-5 mr-2 text-muted-foreground flex-shrink-0 mt-0.5" />
                   <span>Personal expenses, insurance</span>
                 </li>
               </ul>

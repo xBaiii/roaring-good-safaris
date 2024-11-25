@@ -40,7 +40,7 @@
 
 .custom-theme {
   .text-primary {
-    color: hsl(var(--primary)) !important;
+    color: hsl(var(--marsh)) !important;
   }
 
   .text-secondary {

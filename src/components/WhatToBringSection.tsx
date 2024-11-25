@@ -19,44 +19,44 @@ export default function WhatToBringSection() {
             <CardContent>
               <ul className="space-y-2">
                 <li className="flex items-start">
-                  <Check className="w-5 h-5 mr-2 text-green-500 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
                   <span>Light weight, practical clothing</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="w-5 h-5 mr-2 text-green-500 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
                   <span>
                     A good set of walking shoes you are comfortable getting
                     dirty
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="w-5 h-5 mr-2 text-green-500 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
                   <span>
                     Shower shoes for walking to the bathroom blocks in the
                     evenings
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="w-5 h-5 mr-2 text-green-500 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
                   <span>Warm layers for cold nights out on the salt pans</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="w-5 h-5 mr-2 text-green-500 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
                   <span>
                     Sunscreen, a hat and sunglasses - can't forget to slip slop
                     slap
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="w-5 h-5 mr-2 text-green-500 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
                   <span>A poncho or rain jacket for Victoria Falls</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="w-5 h-5 mr-2 text-green-500 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
                   <span>Bug repellent or bug protection</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="w-5 h-5 mr-2 text-green-500 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
                   <span>Swimwear for swimming at the resorts</span>
                 </li>
               </ul>
@@ -79,21 +79,21 @@ export default function WhatToBringSection() {
 "
               >
                 <li className="flex items-start">
-                  <Check className="w-5 h-5 mr-2 text-green-500 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
                   <span>Pack light and versatile clothing items</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="w-5 h-5 mr-2 text-green-500 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
                   <span>
                     Consider bringing a small daypack for daily excursions
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="w-5 h-5 mr-2 text-green-500 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
                   <span>Use packing cubes to organize your belongings</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="w-5 h-5 mr-2 text-green-500 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
                   <span>
                     Bring a reusable water bottle to reduce plastic waste
                   </span>

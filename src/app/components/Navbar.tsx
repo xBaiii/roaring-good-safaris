@@ -1,51 +1,83 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Menu } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+
+const navItems = [
+  { name: "Home", href: "/" },
+  { name: "Itinerary", href: "/itinerary" },
+  { name: "Gallery", href: "/#gallery" },
+  { name: "Book Now", href: "/contact" },
+];
 
 export default function Navbar() {
   const pathname = usePathname();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null; // or a simple loading placeholder
+  }
 
   return (
-    <nav className="bg-safari-primary text-primary-foreground shadow-md">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <Link className="text-xl font-bold text-primary-foreground" href="/">
+    <nav className="bg-safari-primary text-white shadow-md fixed top-0 left-0 right-0 z-50">
+      <div className="container mx-auto px-4 h-16">
+        <div className="flex items-center justify-between h-full">
+          <Link className="text-xl font-bold text-white" href="/">
             Roaring Good Safaris
           </Link>
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-4 ml-auto">
+            {navItems.map((link) => (
               <Link
-                className={`px-3 py-2 rounded-md text-sm font-medium ${
-                  pathname === "/"
-                    ? "bg-safari-secondary text-secondary-foreground"
-                    : "text-primary-foreground hover:bg-primary-foreground/10"
+                key={link.name}
+                href={link.href}
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  pathname === link.href
+                    ? "bg-white text-safari-primary"
+                    : "text-white hover:bg-white/20"
                 }`}
-                href="/"
               >
-                Home
+                {link.name}
               </Link>
-              <Link
-                className={`px-3 py-2 rounded-md text-sm font-medium ${
-                  pathname === "/itinerary"
-                    ? "bg-safari-secondary text-secondary-foreground"
-                    : "text-primary-foreground hover:bg-primary-foreground/10"
-                }`}
-                href="/itinerary"
-              >
-                Itinerary
-              </Link>
-              <Link
-                className={`px-3 py-2 rounded-md text-sm font-medium ${
-                  pathname === "/contact"
-                    ? "bg-safari-secondary text-secondary-foreground"
-                    : "text-primary-foreground hover:bg-primary-foreground/10"
-                }`}
-                href="/contact"
-              >
-                Contact
-              </Link>
-            </div>
+            ))}
+          </div>
+
+          {/* Mobile Navigation */}
+          <div className="md:hidden">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="text-white">
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Open menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                <nav className="flex flex-col gap-4">
+                  {navItems.map((link) => (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      className={`px-3 py-2 rounded-md text-lg font-medium transition-colors ${
+                        pathname === link.href
+                          ? "bg-safari-primary text-white"
+                          : "text-safari-primary hover:bg-safari-primary/20"
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                </nav>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </div>
