@@ -2,20 +2,101 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 39 70% 95%;
+    --foreground: 20 40% 20%;
+    --card: 39 70% 90%;
+    --card-foreground: 20 40% 20%;
+    --popover: 39 70% 90%;
+    --popover-foreground: 20 40% 20%;
+    --primary: 32 95% 44%;
+    --primary-foreground: 39 70% 95%;
+    --secondary: 35 60% 50%;
+    --secondary-foreground: 20 40% 20%;
+    --muted: 39 30% 80%;
+    --muted-foreground: 20 40% 40%;
+    --accent: 35 80% 60%;
+    --accent-foreground: 20 40% 20%;
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 39 70% 95%;
+    --border: 20 40% 80%;
+    --input: 20 40% 80%;
+    --ring: 20 80% 40%;
+    --radius: 0.5rem;
+    --marsh: 79 29% 27%;
+    --marsh-dark: 79 29% 20%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.custom-theme {
+  .text-primary {
+    color: hsl(var(--primary)) !important;
+  }
+
+  .text-secondary {
+    color: hsl(var(--secondary)) !important;
+  }
+
+  .text-accent {
+    color: hsl(var(--accent)) !important;
+  }
+
+  .text-muted {
+    color: hsl(var(--muted)) !important;
+  }
+
+  .bg-primary {
+    background-color: hsl(var(--primary)) !important;
+  }
+
+  .bg-secondary {
+    background-color: hsl(var(--secondary)) !important;
+  }
+
+  .bg-accent {
+    background-color: hsl(var(--accent)) !important;
+  }
+
+  .bg-muted {
+    background-color: hsl(var(--muted)) !important;
+  }
+}
+
+.bg-safari-primary {
+  background-color: hsl(var(--marsh));
+}
+
+.text-safari-primary {
+  color: hsl(var(--marsh));
+}
+
+.bg-safari-secondary {
+  background-color: hsl(var(--secondary));
+}
+
+.text-safari-secondary {
+  color: hsl(var(--secondary));
+}
+
+.hover-safari-primary:hover {
+  background-color: hsl(var(--marsh-dark));
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: hsl(var(--primary));
 }
