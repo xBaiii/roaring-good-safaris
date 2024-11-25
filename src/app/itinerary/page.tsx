@@ -67,8 +67,18 @@ export default function Itinerary() {
                     <TableCell className="font-medium">
                       May 20, 2025 - June 4, 2025
                     </TableCell>
-                    <TableCell>From 4500 AUD per person (twin share)</TableCell>
-                    <TableCell>500 AUD</TableCell>
+                    <TableCell>
+                      From{" "}
+                      <span className="text-primary font-semibold">
+                        4500 AUD{" "}
+                      </span>
+                      per person (twin share)
+                    </TableCell>
+                    <TableCell>
+                      <span className="text-primary font-semibold">
+                        500 AUD
+                      </span>
+                    </TableCell>
                     <TableCell>
                       <Button
                         asChild
