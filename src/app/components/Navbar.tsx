@@ -23,7 +23,7 @@ export default function Navbar() {
   }, []);
 
   if (!isMounted) {
-    return null; // or a simple loading placeholder
+    return null;
   }
 
   return (
@@ -34,7 +34,6 @@ export default function Navbar() {
             Roaring Good Safaris
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4 ml-auto">
             {navItems.map((link) => (
               <Link
@@ -51,7 +50,6 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Mobile Navigation */}
           <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>

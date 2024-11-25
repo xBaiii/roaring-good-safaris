@@ -25,7 +25,6 @@ export default function Navbar() {
             Roaring Good Safaris
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4 ml-auto">
             {navItems.map((link) => (
               <Link
@@ -41,11 +40,7 @@ export default function Navbar() {
               </Link>
             ))}
           </div>
-          {/* <Button asChild className="hidden md:inline-flex bg-white text-safari-primary hover:bg-white/90">
-            <Link href="/contact">Book Now</Link>
-          </Button> */}
 
-          {/* Mobile Navigation */}
           <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
