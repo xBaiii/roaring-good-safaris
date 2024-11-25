@@ -1,7 +1,10 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Calendar, MapPin } from "lucide-react";
+import { Calendar, MapPin, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Table,
@@ -14,43 +17,89 @@ import {
 import Link from "next/link";
 
 export default function Itinerary() {
+  const [showScrollButton, setShowScrollButton] = useState(false);
+  const availableTripsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (availableTripsRef.current) {
+        const rect = availableTripsRef.current.getBoundingClientRect();
+        setShowScrollButton(rect.bottom < 0);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="max-w-4xl mx-auto">
-        <Card className="mb-8">
-          <CardHeader>
-            <CardTitle>Available Safari Trips</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Dates</TableHead>
-                  <TableHead>Price</TableHead>
-                  <TableHead>Deposit</TableHead>
-                  <TableHead></TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                <TableRow>
-                  <TableCell>May 20, 2025 - June 4, 2025</TableCell>
-                  <TableCell>From 4500 AUD per person (twin share)</TableCell>
-                  <TableCell>500 AUD</TableCell>
-                  <TableCell>
-                    <Button asChild>
-                      <Link href="/contact">Book Now</Link>
-                    </Button>
-                  </TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </CardContent>
-        </Card>
+      <div className="max-w-5xl mx-auto">
+        <div ref={availableTripsRef}>
+          <Card className="mb-12 shadow-lg rounded-none">
+            <CardHeader className="bg-safari-primary text-white">
+              <CardTitle className="text-3xl font-bold">
+                Available Safari Trips
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="p-6">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead className="text-lg font-semibold">
+                      Dates
+                    </TableHead>
+                    <TableHead className="text-lg font-semibold">
+                      Price
+                    </TableHead>
+                    <TableHead className="text-lg font-semibold">
+                      Deposit
+                    </TableHead>
+                    <TableHead className="text-lg font-semibold"></TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  <TableRow className="text-base">
+                    <TableCell className="font-medium">
+                      May 20, 2025 - June 4, 2025
+                    </TableCell>
+                    <TableCell>From 4500 AUD per person (twin share)</TableCell>
+                    <TableCell>500 AUD</TableCell>
+                    <TableCell>
+                      <Button
+                        asChild
+                        size="lg"
+                        className="bg-safari-primary hover:bg-[hsl(var(--marsh-dark))] text-white"
+                      >
+                        <Link href="/contact">Book Now</Link>
+                      </Button>
+                    </TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </CardContent>
+          </Card>
+        </div>
+
+        {showScrollButton && (
+          <button
+            onClick={scrollToTop}
+            className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 bg-safari-primary text-white py-2 px-4 rounded-full shadow-lg hover:bg-[hsl(var(--marsh-dark))] transition-colors duration-300 flex items-center space-x-2"
+            aria-label="View Available Safari Trips"
+          >
+            <ChevronUp className="w-5 h-5" />
+            <span className="hidden md:inline">Available Trips</span>
+          </button>
+        )}
 
         <h1 className="text-4xl font-bold mb-4 text-primary">
           Botswana Safari Itinerary
         </h1>
-        <p className="text-lg mb-8 text-muted-foreground">
+        <p className="text-xl mb-8 text-muted-foreground">
           Experience the wild beauty of Botswana on this 15-day adventure from
           May 20 to June 4, 2025.
         </p>

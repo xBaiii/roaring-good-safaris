@@ -53,7 +53,7 @@ export default function Contact() {
                 <div className="grid w-full items-center gap-4">
                   <div className="flex flex-col space-y-1.5">
                     <Label htmlFor="name">Name</Label>
-                    <Input id="name" placeholder="John Doe" />
+                    <Input id="name" placeholder="John" />
                   </div>
                   <div className="flex flex-col space-y-1.5">
                     <Label htmlFor="email">Email</Label>
@@ -67,7 +67,7 @@ export default function Contact() {
                     <Label htmlFor="phone">Phone</Label>
                     <Input
                       id="phone"
-                      placeholder="+1 234 567 8900"
+                      placeholder="+61 123 456 789"
                       type="tel"
                     />
                   </div>
