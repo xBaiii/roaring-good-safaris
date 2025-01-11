@@ -100,3 +100,8 @@ footer a {
 footer a:hover {
   color: hsl(var(--primary));
 }
+
+.container {
+  max-width: 80% !important;
+  width: 80% !important;
+}
