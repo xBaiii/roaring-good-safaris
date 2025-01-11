@@ -19,7 +19,7 @@ export default function HeroBanner() {
             Experience the Wild with Roaring Good Safaris
           </h1>
           <p className="mb-8 max-w-2xl text-lg text-white/90 sm:text-xl">
-            Unforgettable adventures across Africa's most breathtaking
+            Unforgettable adventures across Botswana's most breathtaking
             landscapes
           </p>
           <div className="flex gap-4">
@@ -28,7 +28,7 @@ export default function HeroBanner() {
               size="lg"
               className="bg-safari-primary hover:bg-[hsl(var(--marsh-dark))] text-white"
             >
-              <Link href="/itinerary">View Itineraries</Link>
+              <Link href="/itinerary">View Itinerary</Link>
             </Button>
             <Button
               asChild
