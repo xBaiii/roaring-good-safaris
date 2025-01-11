@@ -34,7 +34,7 @@ export default function HeroBanner() {
               asChild
               size="lg"
               variant="outline"
-              className="bg-white/10 text-white hover:bg-white/20"
+              className="bg-white/20 text-white hover:bg-white/40 hover:text-white"
             >
               <Link href="/contact">Contact Us</Link>
             </Button>
