@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -19,6 +21,38 @@ import {
 import { MapPin, Phone, Mail } from "lucide-react";
 
 export default function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("/api/send-sms", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, phone, message }),
+      });
+
+      if (response.ok) {
+        alert("Message sent and SMS dispatched!");
+        setName("");
+        setEmail("");
+        setPhone("");
+        setMessage("");
+      } else {
+        const errorData = await response.json();
+        console.error("Error sending message:", errorData.error);
+      }
+    } catch (error) {
+      console.error("Request failed:", error);
+    }
+  };
+
   return (
     <div className="container mx-auto px-4 py-16">
       <div className="grid md:grid-cols-2 gap-12 mb-16">
@@ -49,11 +83,17 @@ export default function Contact() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="grid w-full items-center gap-4">
                   <div className="flex flex-col space-y-1.5">
                     <Label htmlFor="name">Name</Label>
-                    <Input id="name" placeholder="John" />
+                    <Input
+                      id="name"
+                      placeholder="John"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      required
+                    />
                   </div>
                   <div className="flex flex-col space-y-1.5">
                     <Label htmlFor="email">Email</Label>
@@ -61,6 +101,9 @@ export default function Contact() {
                       id="email"
                       placeholder="john@example.com"
                       type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
                     />
                   </div>
                   <div className="flex flex-col space-y-1.5">
@@ -69,6 +112,9 @@ export default function Contact() {
                       id="phone"
                       placeholder="+61 123 456 789"
                       type="tel"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      required
                     />
                   </div>
                   <div className="flex flex-col space-y-1.5">
@@ -76,14 +122,19 @@ export default function Contact() {
                     <Textarea
                       id="message"
                       placeholder="Tell us about your dream safari..."
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      required
                     />
                   </div>
                 </div>
+                <CardFooter>
+                  <Button type="submit" className="w-full">
+                    Send Message
+                  </Button>
+                </CardFooter>
               </form>
             </CardContent>
-            <CardFooter>
-              <Button className="w-full">Send Message</Button>
-            </CardFooter>
           </Card>
         </div>
       </div>
