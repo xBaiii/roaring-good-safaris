@@ -11,7 +11,8 @@ const navItems = [
   { name: "Home", href: "/" },
   { name: "Itinerary", href: "/itinerary" },
   { name: "Gallery", href: "/#gallery" },
-  { name: "Book Now", href: "/contact" },
+  { name: "Meet your guide", href: "/aboutUs" },
+  { name: "Contact Us", href: "/contact" },
 ];
 
 export default function Navbar() {
